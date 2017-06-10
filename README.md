@@ -34,7 +34,7 @@ As far as I know this software is a quite bit unique. The most comparable softwa
 
 # TODO List
 Feel free to submit requests for new functionality not already on the TODO list.
-Markup : * API Documentation and Wiki, primarly for ECMA/Java-scripting
+* API Documentation and Wiki, primarly for ECMA/Java-scripting
 * A lot of samples showcasing functionality
 * Scaling
   * Lanczos
