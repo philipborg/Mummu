@@ -1,7 +1,7 @@
 # Mummu
-A script driven system for generating and manipulating very big images. It is perfect for generating images of extreme sizes not possible in conventional photo editing software such as Photoshop and GIMP. Write the generation code using ECMA Script (Javascript) and let it generate it with a comparatively very small memory footprint. Also usable as a normal JVM library.
+A script driven system for generating and manipulating very big images. It is perfect for generating images of extreme sizes not possible in conventional photo editing software such as Adobe Photoshop and GIMP. Write the generation code using ECMA Script (Javascript) and let it generate with a comparatively very small memory footprint. Also usable as a normal JVM library.
 
-As far as I know this software is a quite bit unique. The most comparable software is ImageMagick but it requires native libraries for JVM. 
+As far as I know this software is quite unique. The most comparable software is ImageMagick but it requires native libraries and is not as crossplatform as JVM. It also lacks support for noise generation and is not as easy to script for.
 
 # Features
 * Pure JAVA
@@ -30,7 +30,7 @@ As far as I know this software is a quite bit unique. The most comparable softwa
   * Nearest neighbour
 * Cross-platform
   * As library, should work on any Java 8 JRE including Android(/Dalvik).
-  * As standalone, should work on any Java 8 JRE with JavaFX support.
+  * As standalone, should work on any Java 8 JRE. GUI requires JavaFX support but the CLI just requires a terminal.
 
 # TODO List
 Feel free to submit requests for new functionality not already on the TODO list.
@@ -44,6 +44,7 @@ Feel free to submit requests for new functionality not already on the TODO list.
   * A yet to be decided uncompressed openstandard image format
 * Automatic handling of closeable (currently relies on the user)
 * Support for remote filesystems over WebDAV, (S)FTP etc.
+* Add to Maven central
 
 # License
 This software is licensed under [AGPL Version 3](https://www.gnu.org/licenses/agpl-3.0.txt). If that does not suite your requirements please feel free to contact me for a personal license.
