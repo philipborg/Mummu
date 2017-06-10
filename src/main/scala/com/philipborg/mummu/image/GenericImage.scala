@@ -3,7 +3,6 @@ package com.philipborg.mummu.image
 import com.google.common.math.IntMath
 import com.philipborg.mummu.collection.BigArray
 import com.google.common.primitives.UnsignedInteger
-import spire.math.UInt
 import scala.collection.mutable.Queue
 import scala.collection.mutable.ArrayBuffer
 
