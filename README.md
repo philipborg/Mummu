@@ -4,7 +4,7 @@ A script driven system for generating and manipulating very big images. It is pe
 As far as I know this software is a quite bit unique. The most comparable software is ImageMagick but it requires native libraries for JVM. 
 
 # Features
-* Pure JAVA
+Markup : * Pure JAVA
 * Use as library or standalone
 * Program using sandboxed ECMA Script (Javascript)
 * Images
@@ -34,7 +34,7 @@ As far as I know this software is a quite bit unique. The most comparable softwa
 
 # TODO List
 Feel free to submit requests for new functionality not already on the TODO list.
-* API Documentation and Wiki, primarly for ECMA/Java-scripting
+Markup : * API Documentation and Wiki, primarly for ECMA/Java-scripting
 * A lot of samples showcasing functionality
 * Scaling
  * Lanczos
