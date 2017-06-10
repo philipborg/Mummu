@@ -4,7 +4,7 @@ A script driven system for generating and manipulating very big images. It is pe
 As far as I know this software is quite unique. The most comparable software is ImageMagick but it requires native libraries and is not as crossplatform as JVM. It also lacks support for noise generation and is not as easy to script for.
 
 # Features
-* Pure JAVA
+* Pure JAVA, well Java-bytecode. Written in Scala which compiles to Java-bytecode.
 * Use as library or standalone
 * Program using sandboxed ECMA Script (Javascript)
 * Images
