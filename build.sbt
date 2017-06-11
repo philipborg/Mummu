@@ -22,6 +22,9 @@ libraryDependencies += "ar.com.hjg" % "pngj" % "2.1.0"
 //Adobe repository
 resolvers += "Adobe Repository" at "https://repo.adobe.com/nexus/content/repositories/public/"
 
+//Commons CLI
+libraryDependencies += "commons-cli" % "commons-cli" % "1.4"
+
 //Commons VFS
 libraryDependencies += "org.apache.commons" % "commons-vfs2" % "2.1"
 

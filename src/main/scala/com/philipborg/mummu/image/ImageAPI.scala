@@ -45,11 +45,11 @@ class ImageAPI(pathResolver: PathResolver) {
   }
 
   def save(image: Image, path: String):Unit = save(image,path,"");
-  def save(image: Image, path: String, parameters: String*): Unit = {
+  def save(image: Image, path: String, parameters: String): Unit = {
     if (!path.exists { c => c == '.' }) throw new IllegalArgumentException("File lacks extension.");
     val fileExtension = FilenameUtils.getExtension(path);
     fileExtension match {
-      case "png" => PngExporter(pathResolver.resolvePathToOutputstream(path, false), image, parameters:_*);
+      case "png" => PngExporter(pathResolver.resolvePathToOutputstream(path, false), image, parameters);
       case _     => throw new IllegalArgumentException("File extension " + fileExtension + " is not a supported imageformat.");
     }
   }
