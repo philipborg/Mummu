@@ -57,7 +57,7 @@ Feel free to submit requests for new functionality not already on the TODO list.
 
 # Build instructions for fat runnable jar
 1. Install JDK 8, either [Oracle JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) or [OpenJDK JDK](http://openjdk.java.net/install/) for desktop.
-2. [Clone](https://help.github.com/articles/cloning-a-repository/) the repository or download zip.
+2. [Clone](https://help.github.com/articles/cloning-a-repository/) the repository or download zip ([Master branch](https://github.com/philipborg/Mummu/archive/master.zip)).
 3. Install latest [Scala Build Tool](http://www.scala-sbt.org/download.html)
 4. Open a terminal or command prompt in the cloned repository.
 5. Write `sbt assembly` and wait for it to download all dependencies and compile Mummu.
