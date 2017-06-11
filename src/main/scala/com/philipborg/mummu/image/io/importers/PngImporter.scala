@@ -1,19 +1,20 @@
 package com.philipborg.mummu.image.io.importers
 
-import ar.com.hjg.pngj.PngReader
-import com.philipborg.mummu.image.Image
-import com.philipborg.mummu.image.Pixel
 import java.io.InputStream
-import ar.com.hjg.pngj.ImageLineInt
-import com.philipborg.mummu.image.ImageSpecification
-import com.philipborg.mummu.image.ImageSpecification
-import com.philipborg.mummu.image.ImageSpecification
 
-object PngImporter extends ImageImporter{
+import com.philipborg.mummu.image.Image
+import com.philipborg.mummu.image.ImageSpecification
+import com.philipborg.mummu.image.Pixel
+
+import ar.com.hjg.pngj.ImageLineInt
+import ar.com.hjg.pngj.PngReader
+import com.google.common.math.IntMath
+
+object PngImporter extends ImageImporter {
   def apply(inputStream: InputStream, imageSpawner: (ImageSpecification) => Image): Image = {
     val pngr = new PngReader(inputStream, true);
     val imgInfo = pngr.imgInfo;
-    
+
     val imageSpec = new ImageSpecification {
       val width: Int = imgInfo.cols;
       val height: Int = imgInfo.rows;
@@ -21,7 +22,7 @@ object PngImporter extends ImageImporter{
       val grayscale: Boolean = imgInfo.greyscale;
       val alpha: Boolean = imgInfo.alpha;
     }
-    
+
     val image: Image = imageSpawner(imageSpec);
 
     val bpc = imageSpec.bpc;

@@ -5,7 +5,6 @@ import java.io.OutputStream
 
 import org.apache.commons.vfs2.FileObject
 import org.apache.commons.vfs2.VFS
-import java.nio.file.Path
 
 class WebDavResolver(username: String, password: String, hostname: String, port: Int) extends PathResolver {
 

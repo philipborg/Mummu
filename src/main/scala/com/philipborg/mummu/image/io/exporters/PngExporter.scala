@@ -1,25 +1,25 @@
 package com.philipborg.mummu.image.io.exporters
 
 import java.io.OutputStream
+
 import com.philipborg.mummu.image.Image
+
 import ar.com.hjg.pngj.ImageInfo
-import ar.com.hjg.pngj.PngWriter
-import ar.com.hjg.pngj.chunks.PngChunkTextVar.PngTxtInfo
-import ar.com.hjg.pngj.chunks.PngChunkTEXT
-import ar.com.hjg.pngj.chunks.PngChunkTextVar
 import ar.com.hjg.pngj.ImageLineInt
+import ar.com.hjg.pngj.PngWriter
+import ar.com.hjg.pngj.chunks.PngChunkTextVar
 
 object PngExporter extends ImageExporter {
-  def apply(output: OutputStream, image: Image, params: String*): Unit = {
-    
+
+  def apply(output: OutputStream, image: Image, params: String): Unit = {
     val imgInfo = new ImageInfo(image.width, image.height, image.bpc, image.alpha, image.grayscale, false);
-    if(imgInfo.cols.toLong * imgInfo.channels.toLong > Int.MaxValue.toLong) throw new IllegalArgumentException("The PNG writer only supports images where width * channels is less than (2^31)-1.");
+    if (imgInfo.cols.toLong * imgInfo.channels.toLong > Int.MaxValue.toLong) throw new IllegalArgumentException("The PNG writer only supports images where width * channels is less than (2^31)-1.");
     val pngWriter = new PngWriter(output, imgInfo);
-    pngWriter.setCompLevel(9); //TODO Allow params
+    pngWriter.setCompLevel(if (params.isEmpty) 9 else params.toInt);
     pngWriter.getMetadata.setTimeNow;
     //TODO Allow params metadata
     pngWriter.getMetadata.setText(PngChunkTextVar.KEY_Software, "Mummu by philipborg");
-    //TODO pngWriter.getMetadata.setText("SoftwareLink", "");
+    pngWriter.getMetadata.setText("SoftwareLink", "https://github.com/philipborg/Mummu");
     try {
       for (y <- 0 until image.height) {
         val imgLineInt = new ImageLineInt(imgInfo);

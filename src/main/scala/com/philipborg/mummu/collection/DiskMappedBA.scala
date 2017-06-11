@@ -1,17 +1,15 @@
 package com.philipborg.mummu.collection
 
-import java.nio.channels.SeekableByteChannel
-import scala.collection.mutable.ArrayBuffer
-import java.nio.ByteBuffer
-import java.nio.channels.FileChannel
-import java.nio.file.Path
-import java.nio.file.OpenOption
-import java.nio.file.StandardOpenOption
-import java.nio.MappedByteBuffer
-import com.google.common.math.LongMath
 import java.math.RoundingMode
+import java.nio.MappedByteBuffer
+import java.nio.channels.FileChannel
 import java.nio.channels.FileChannel.MapMode
-import com.google.common.math.IntMath
+import java.nio.file.Path
+import java.nio.file.StandardOpenOption
+
+import scala.collection.mutable.ArrayBuffer
+
+import com.google.common.math.LongMath
 
 class DiskMappedBA(path: Path, val size: Long) extends BigArray[Byte] {
 
@@ -43,7 +41,7 @@ class DiskMappedBA(path: Path, val size: Long) extends BigArray[Byte] {
   def apply(index: Long): Byte = {
     return mappings(LongMath.divide(index, Int.MaxValue, RoundingMode.DOWN).toInt).get((index % Int.MaxValue).toInt);
   }
-  
+
   def update(index: Long, value: Byte): Unit = {
     mappings(LongMath.divide(index, Int.MaxValue, RoundingMode.DOWN).toInt).put((index % Int.MaxValue).toInt, value);
   }

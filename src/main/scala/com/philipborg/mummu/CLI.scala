@@ -1,15 +1,15 @@
 package com.philipborg.mummu
 
+import java.io.OutputStreamWriter
+import java.nio.charset.StandardCharsets
+
 import scala.io.StdIn
 
 import com.philipborg.mummu.io.FileResolver
-import java.nio.charset.StandardCharsets
-import java.io.OutputStreamWriter
 
-object CLI {
+class CLI {
   val codeBreaker = "§";
-  def main(args: Array[String]) = {
-
+  def run:Unit = {
     println("Enter work directory");
     val dir = StdIn.readLine;
     val resolver = new FileResolver(dir);

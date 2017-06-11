@@ -19,7 +19,7 @@ class SimpleText(pathResolver: PathResolver) extends TextAPI {
     os.write(out.toString.getBytes(charset));
     os.close;
   }
-  
+
   val ls = System.lineSeparator;
 
 }

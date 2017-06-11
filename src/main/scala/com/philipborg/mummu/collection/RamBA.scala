@@ -21,8 +21,8 @@ class RamBA[T: ClassTag](val size: Long) extends BigArray[T] {
     }
     arrays.toArray;
   }
-  
-  def close:Unit = return;
+
+  def close: Unit = return ;
 
   def apply(index: Long): T = {
     val outerIndex = LongMath.divide(index, Int.MaxValue, RoundingMode.DOWN).toInt;

@@ -5,9 +5,6 @@ import java.io.OutputStream
 
 import org.apache.commons.vfs2.FileObject
 import org.apache.commons.vfs2.VFS
-import java.nio.file.Path
-import java.nio.file.Files
-import java.nio.file.Paths
 
 class FileResolver(directory: String) extends PathResolver {
 

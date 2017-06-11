@@ -13,6 +13,8 @@ As far as I know this software is quite unique. The most comparable software is 
   * 1, 2, 4, 8 or 16 bits per colour/channel support
   * Support for diskmapping, meaning it can use disk-space as RAM for storing images.
   * Supports ridiculously big images.
+    * Up to 2 147 483 647 pixels wide or heigh
+    * Up to 4 611 686 Terabyte of image data
 * Image IO
   * PNG Import/Export
     * Support for all PNG types
@@ -36,6 +38,8 @@ As far as I know this software is quite unique. The most comparable software is 
 Feel free to submit requests for new functionality not already on the TODO list.
 * API Documentation and Wiki, primarly for ECMA/Java-scripting
 * A lot of samples showcasing functionality
+* Increase parallelism/threading support
+  * Threadsafety
 * Scaling
   * Lanczos
   * Bilinear

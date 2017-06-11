@@ -1,15 +1,13 @@
 package com.philipborg.mummu.image
 
-import com.google.common.math.IntMath
-import com.philipborg.mummu.collection.BigArray
-import com.google.common.primitives.UnsignedInteger
-import spire.math.UInt
-import scala.collection.mutable.Queue
 import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.Queue
+
+import com.philipborg.mummu.collection.BigArray
 
 class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale: Boolean, val alpha: Boolean, val bigArray: (Long) => BigArray[Boolean]) extends Image {
   if (bpc != 1 && bpc != 2 && bpc != 4 && bpc != 8 && bpc != 16) throw new IllegalArgumentException("BPC most be 1, 2, 4, 8 or 16.");
-  protected val data = bigArray.apply(width.toLong * height.toLong * bpp.toLong);
+  protected val data: BigArray[Boolean] = bigArray.apply(width.toLong * height.toLong * bpp.toLong);
 
   def allowed(x: Int, y: Int): Boolean = {
     return (x < width) && (y < height) && (x >= 0) && (y >= 0);
@@ -87,7 +85,7 @@ class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale
   }
 
   protected def flat(x: Long, y: Long, c: Long): Long = {
-    return x + height * (y + width * c);
+    return x * height * bpp + y * bpp + c;
   }
 
   /**
