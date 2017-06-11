@@ -1,6 +1,6 @@
 //SBT Info
 name := "Mummu"
-version := "0.0.1"
+version := "0.0.2"
 
 //Scala info
 scalaVersion := "2.11.8"
@@ -14,13 +14,10 @@ EclipseKeys.projectFlavor := EclipseProjectFlavor.ScalaIDE
 EclipseKeys.relativizeLibs := false
 
 //Guava
-libraryDependencies += "com.google.guava" % "guava" % "19.0"
+libraryDependencies += "com.google.guava" % "guava" % "22.0"
 
 //PNG printing
 libraryDependencies += "ar.com.hjg" % "pngj" % "2.1.0"
-
-//Adobe repository
-resolvers += "Adobe Repository" at "https://repo.adobe.com/nexus/content/repositories/public/"
 
 //Commons CLI
 libraryDependencies += "commons-cli" % "commons-cli" % "1.4"
@@ -36,3 +33,6 @@ libraryDependencies += "org.javadelight" % "delight-nashorn-sandbox" % "0.0.12"
 
 //ScalaFX (JavaFX)
 libraryDependencies += "org.scalafx" % "scalafx_2.11" % "8.0.102-R11"
+
+//FindBugs JSR305 Dependency for dependency
+libraryDependencies += "com.google.code.findbugs" % "jsr305" % "3.0.2"
