@@ -38,6 +38,8 @@ As far as I know this software is quite unique. The most comparable software is 
 Feel free to submit requests for new functionality not already on the TODO list.
 * API Documentation and Wiki, primarly for ECMA/Java-scripting
 * A lot of samples showcasing functionality
+* Increase parallelism/threading support
+  * Threadsafety
 * Scaling
   * Lanczos
   * Bilinear
