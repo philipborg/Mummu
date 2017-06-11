@@ -1,8 +1,8 @@
-//Create 2048 wide 1024 high grayscale 16 BPC with no alpha
-var image = IMAGE.createImage(2048, 1024, 16, 1, 0);
+//Create 4000 pixels wide 1000 high grayscale 16 BPC with no alpha
+var image = IMAGE.createImage(4000, 1000, 16, 1, 0);
 
 //Simple progress keeper, optional
-var progress = PROG.default(image.height());
+var progress = PROG.default(image.width());
 
 //Loop for each axis
 for (var x = 0; x < image.width(); x++) {
@@ -25,3 +25,6 @@ progress.close();
 
 //Exports the image to a png file on disk
 IMAGE.save(image, "GrayGradient.png");
+
+//Currently needed, optionally restart the JVM
+image.close();
