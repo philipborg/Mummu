@@ -1,10 +1,11 @@
 package com.philipborg.mummu
 
+import java.io.OutputStreamWriter
+import java.nio.charset.StandardCharsets
+
 import scala.io.StdIn
 
 import com.philipborg.mummu.io.FileResolver
-import java.nio.charset.StandardCharsets
-import java.io.OutputStreamWriter
 
 object CLI {
   val codeBreaker = "§";

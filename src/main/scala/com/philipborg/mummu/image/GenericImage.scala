@@ -1,10 +1,9 @@
 package com.philipborg.mummu.image
 
-import com.google.common.math.IntMath
-import com.philipborg.mummu.collection.BigArray
-import com.google.common.primitives.UnsignedInteger
-import scala.collection.mutable.Queue
 import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.Queue
+
+import com.philipborg.mummu.collection.BigArray
 
 class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale: Boolean, val alpha: Boolean, val bigArray: (Long) => BigArray[Boolean]) extends Image {
   if (bpc != 1 && bpc != 2 && bpc != 4 && bpc != 8 && bpc != 16) throw new IllegalArgumentException("BPC most be 1, 2, 4, 8 or 16.");

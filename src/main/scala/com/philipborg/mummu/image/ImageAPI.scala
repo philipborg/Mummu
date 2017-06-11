@@ -1,25 +1,15 @@
 package com.philipborg.mummu.image
 
-import com.philipborg.mummu.io.PathResolver
-import ar.com.hjg.pngj.PngReader
-import ar.com.hjg.pngj.ImageLineInt
-import org.apache.commons.io.FilenameUtils
-import java.util.concurrent.ThreadPoolExecutor
-import java.util.concurrent.TimeUnit
-import java.util.concurrent.ArrayBlockingQueue
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
-import com.philipborg.mummu.collection.BigArray
-import com.philipborg.mummu.collection.DiskMappedBA
-import java.nio.file.Path
-import java.nio.file.Paths
-import com.philipborg.mummu.collection.GuavaCacheBA
-import com.google.common.cache.CacheBuilder
-import com.philipborg.mummu.collection.ByteToBoolBA
 import java.nio.file.Files
-import java.nio.file.attribute.FileAttribute
-import com.philipborg.mummu.image.io.importers.PngImporter
+
+import org.apache.commons.io.FilenameUtils
+
+import com.philipborg.mummu.collection.BigArray
+import com.philipborg.mummu.collection.ByteToBoolBA
+import com.philipborg.mummu.collection.DiskMappedBA
 import com.philipborg.mummu.image.io.exporters.PngExporter
+import com.philipborg.mummu.image.io.importers.PngImporter
+import com.philipborg.mummu.io.PathResolver
 
 class ImageAPI(pathResolver: PathResolver) {
 
@@ -44,7 +34,7 @@ class ImageAPI(pathResolver: PathResolver) {
     }
   }
 
-  def save(image: Image, path: String):Unit = save(image,path,"");
+  def save(image: Image, path: String): Unit = save(image, path, "");
   def save(image: Image, path: String, parameters: String): Unit = {
     if (!path.exists { c => c == '.' }) throw new IllegalArgumentException("File lacks extension.");
     val fileExtension = FilenameUtils.getExtension(path);

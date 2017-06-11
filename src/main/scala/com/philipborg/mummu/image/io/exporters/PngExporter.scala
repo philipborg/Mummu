@@ -1,15 +1,13 @@
 package com.philipborg.mummu.image.io.exporters
 
 import java.io.OutputStream
+
 import com.philipborg.mummu.image.Image
+
 import ar.com.hjg.pngj.ImageInfo
-import ar.com.hjg.pngj.PngWriter
-import ar.com.hjg.pngj.chunks.PngChunkTextVar.PngTxtInfo
-import ar.com.hjg.pngj.chunks.PngChunkTEXT
-import ar.com.hjg.pngj.chunks.PngChunkTextVar
 import ar.com.hjg.pngj.ImageLineInt
-import org.apache.commons.cli.Options
-import org.apache.commons.cli.DefaultParser
+import ar.com.hjg.pngj.PngWriter
+import ar.com.hjg.pngj.chunks.PngChunkTextVar
 
 object PngExporter extends ImageExporter {
 

@@ -1,7 +1,8 @@
 package com.philipborg.mummu.math.noise
 
-import com.kurtspencer.math.noise.OpenSimplexNoise
 import scala.util.Random
+
+import com.kurtspencer.math.noise.OpenSimplexNoise
 
 class OSN2DTileable(seed: Option[Long] = None, width: Long, height: Long) extends Noise2D {
   protected val osn = if (seed.isDefined) new OpenSimplexNoise(seed.get) else new OpenSimplexNoise(Random.nextLong);

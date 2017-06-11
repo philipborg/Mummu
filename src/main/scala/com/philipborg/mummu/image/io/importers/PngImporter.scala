@@ -1,13 +1,13 @@
 package com.philipborg.mummu.image.io.importers
 
-import ar.com.hjg.pngj.PngReader
-import com.philipborg.mummu.image.Image
-import com.philipborg.mummu.image.Pixel
 import java.io.InputStream
+
+import com.philipborg.mummu.image.Image
+import com.philipborg.mummu.image.ImageSpecification
+import com.philipborg.mummu.image.Pixel
+
 import ar.com.hjg.pngj.ImageLineInt
-import com.philipborg.mummu.image.ImageSpecification
-import com.philipborg.mummu.image.ImageSpecification
-import com.philipborg.mummu.image.ImageSpecification
+import ar.com.hjg.pngj.PngReader
 
 object PngImporter extends ImageImporter{
   def apply(inputStream: InputStream, imageSpawner: (ImageSpecification) => Image): Image = {

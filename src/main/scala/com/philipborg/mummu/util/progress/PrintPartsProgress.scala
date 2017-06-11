@@ -1,13 +1,12 @@
 package com.philipborg.mummu.util.progress
 
+import java.io.PrintStream
 import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+import java.util.TimeZone
 import java.util.Timer
 import java.util.TimerTask
 import java.util.concurrent.TimeUnit
-import java.io.PrintStream
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.TimeZone
 
 class PrintPartsProgress(printStream: PrintStream, val complete: Long, val taskName: Option[String] = None, val interval: Long = 2, val unit: TimeUnit = TimeUnit.SECONDS, val msDelay: Long = 0) extends PartsProgress {
   protected val formater = new DecimalFormat("#0.00");

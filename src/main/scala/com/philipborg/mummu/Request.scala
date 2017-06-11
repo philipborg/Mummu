@@ -1,5 +1,6 @@
 package com.philipborg.mummu
 
+import java.io.Writer
 import java.util.concurrent.Callable
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -10,11 +11,9 @@ import com.philipborg.mummu.io.PathResolver
 import com.philipborg.mummu.io.text.CharsetsAPI
 import com.philipborg.mummu.io.text.SimpleText
 import com.philipborg.mummu.math.noise.NoiseAPI
+import com.philipborg.mummu.util.progress.ProgressAPI
 
 import delight.nashornsandbox.NashornSandboxes
-import com.philipborg.mummu.util.progress.ProgressAPI
-import java.io.Writer
-import java.io.PrintWriter
 
 class Request(code: String, pathResolver: PathResolver, maxTime: Option[Int] = None, jsexecutor: Option[ExecutorService] = None, writer: Option[Writer] = None) extends Callable[Option[Throwable]] {
 

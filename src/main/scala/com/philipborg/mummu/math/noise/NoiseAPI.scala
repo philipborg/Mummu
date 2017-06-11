@@ -12,4 +12,7 @@ class NoiseAPI {
 
   def osn2DTileable(seed: Long, width: Long, height: Long) = new OSN2DTileable(Some(seed), width, height);
   def osn2DTileable(width: Long, height: Long) = new OSN2DTileable(None, width, height);
+
+  def osn3DTileable(seed: Long, width: Long, height: Long, depth: Long) = new OSN3DTileable(Some(seed), width, height, depth);
+  def osn3DTileable(width: Long, height: Long, depth: Long) = new OSN3DTileable(None, width, height, depth);
 }

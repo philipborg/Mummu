@@ -4,11 +4,11 @@ import java.math.RoundingMode
 
 import com.google.common.math.IntMath
 
-class IllegalColour(bpc: Byte, actual:Int) extends RuntimeException("Colour values for BPC " + bpc + " most be between 0 and " + (IntMath.pow(2, bpc) - 1) + " inclusive not " + actual +".");
+class IllegalColour(bpc: Byte, actual: Int) extends RuntimeException("Colour values for BPC " + bpc + " most be between 0 and " + (IntMath.pow(2, bpc) - 1) + " inclusive not " + actual + ".");
 
 /**
  * TODO Possibly compress it to store it using a single long instead of 5 ints.
- * 
+ *
  * A single pixel storing colour information. All pixels store Alpha, Gray, Red, Green, Blue and the BPC. All channels do however not need to be fed to the constructor.
  * Unused channels values will be generated.
  * @param bpc The number of bits per colour channel

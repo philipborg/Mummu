@@ -1,7 +1,6 @@
 package com.philipborg.mummu.math.noise
 
 import com.kurtspencer.math.noise.OpenSimplexNoiseTileable3D
-import com.google.common.math.IntMath
 
 class OSN3DTileable(seed: Option[Long] = None, width: Long, height: Long, depth: Long) extends Noise3D {
 
