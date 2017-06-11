@@ -23,3 +23,4 @@ print("Saving image to NoiseSample.png");
 IMAGE.save(image, "NoiseSample.png");
 
 image.close();
+print("Complete");
