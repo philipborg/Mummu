@@ -7,10 +7,9 @@ import scala.io.StdIn
 
 import com.philipborg.mummu.io.FileResolver
 
-object CLI {
+class CLI {
   val codeBreaker = "§";
-  def main(args: Array[String]) = {
-
+  def run:Unit = {
     println("Enter work directory");
     val dir = StdIn.readLine;
     val resolver = new FileResolver(dir);

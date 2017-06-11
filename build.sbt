@@ -1,6 +1,7 @@
 //SBT Info
 name := "Mummu"
 version := "0.0.2"
+organization := "com.philipborg.mummu"
 
 //Scala info
 scalaVersion := "2.11.8"

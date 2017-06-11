@@ -24,12 +24,6 @@ import scalafx.scene.paint.Color.Black
 import scalafx.stage.DirectoryChooser
 import scalafx.stage.FileChooser
 
-object Starter {
-  def main(args: Array[String]): Unit = {
-    (new SimpleGUI).main(args);
-  }
-}
-
 /**
  * This should really be called Shitty GUI. As poorly designed as programmed, writing it was however very fast.
  */
