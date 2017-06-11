@@ -5,11 +5,13 @@ As far as I know this software is quite unique. The most comparable software is 
 
 # Features
 * Pure JAVA, well Java-bytecode. Written in Scala which compiles to Java-bytecode.
+* No AWT nor Javax
 * Use as library or standalone
 * Program using sandboxed ECMA Script (Javascript)
 * Images
   * Grayscale support
   * Alpha support
+  * Colour support
   * 1, 2, 4, 8 or 16 bits per colour/channel support
   * Support for diskmapping, meaning it can use disk-space as RAM for storing images.
   * Supports ridiculously big images.
@@ -18,7 +20,7 @@ As far as I know this software is quite unique. The most comparable software is 
 * Image IO
   * PNG Import/Export
     * Support for all PNG types
-    * RAM conservative
+    * RAM conservative (Works line-by-line)
     * Variable compression ratio
     * Limitations
       * Dimensions (width or height) over 536 million pixels might cause some problems, depends on the number of channels.
@@ -28,11 +30,12 @@ As far as I know this software is quite unique. The most comparable software is 
     * 3D with optional border wrapping
     * 4D
 * Progress logging
+* Write textfiles
 * Scaling
   * Nearest neighbour
 * Cross-platform
-  * As library, should work on any Java 8 JRE including Android(/Dalvik).
-  * As standalone, should work on any Java 8 JRE. GUI requires JavaFX support but the CLI just requires a terminal.
+  * As library: should work on any Java 8 JRE including Android(/Dalvik). No ECMA Script on Android as Android JVM (Dalvik) does not support Nashorn. Java API should work fine however.
+  * As standalone: should work on any Java 8 JRE. GUI requires JavaFX support but the CLI just requires a terminal.
 
 # TODO List
 Feel free to submit requests for new functionality not already on the TODO list.
@@ -46,6 +49,8 @@ Feel free to submit requests for new functionality not already on the TODO list.
   * Bicubic
 * Image IO
   * A yet to be decided uncompressed openstandard image format
+* IO
+  * Raw byte file writer
 * Automatic handling of closeable (currently relies on the user)
 * Support for remote filesystems over WebDAV, (S)FTP etc.
 * Add to Maven central
