@@ -5,7 +5,6 @@ As far as I know this software is quite unique. The most comparable software is 
 
 # Features
 * Pure JAVA, well Java-bytecode. Written in Scala which compiles to Java-bytecode.
-* No AWT nor Javax
 * Use as library or standalone
 * Program using sandboxed ECMA Script (Javascript)
 * Images
