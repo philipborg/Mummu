@@ -1,20 +1,22 @@
 package com.philipborg.mummu
 
-import org.apache.commons.cli.HelpFormatter
 import java.awt.GraphicsEnvironment
 import java.nio.charset.Charset
-import org.apache.commons.cli.DefaultParser
-import org.apache.commons.cli.CommandLineParser
 import java.nio.charset.StandardCharsets
-import org.apache.commons.cli.Options
-import org.apache.commons.cli.CommandLine
-import java.nio.file.Paths
-import java.nio.file.Path
 import java.nio.file.Files
-import java.sql.Time
+import java.nio.file.Path
+import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
-import com.philipborg.mummu.io.FileResolver
+
 import scala.io.StdIn
+
+import org.apache.commons.cli.CommandLine
+import org.apache.commons.cli.CommandLineParser
+import org.apache.commons.cli.DefaultParser
+import org.apache.commons.cli.HelpFormatter
+import org.apache.commons.cli.Options
+
+import com.philipborg.mummu.io.FileResolver
 
 object CLI {
   val CLIOptions: Options = new Options {
