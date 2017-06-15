@@ -5,7 +5,7 @@ A script driven system for generating and manipulating very big images. It is pe
 * Pure JAVA, well Java-bytecode. Written in Scala which compiles to Java-bytecode.
 * Use as library or standalone
 * Program using sandboxed ECMA Script (Javascript)
-* Command Line Interface for headless environemnts and Bash/Bat/PS scripting
+* Command Line Interface for headless environments and Bash/Bat/PS scripting
 * Images
   * Grayscale support
   * Alpha support
