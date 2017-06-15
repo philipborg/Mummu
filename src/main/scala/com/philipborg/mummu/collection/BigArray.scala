@@ -6,5 +6,4 @@ trait BigArray[T] extends AutoCloseable {
   def update(index: Long, value: T): Unit;
   def fill(eval: Long => T): Unit = (0l until size par).foreach(i => update(i, eval(i)));
   def fill(eval: => T): Unit = (0l until size par).foreach(i => update(i, eval));
-
 }

@@ -9,14 +9,15 @@ import org.apache.commons.vfs2.VFS
 class FileResolver(directory: String) extends PathResolver {
 
   protected val fsMan = VFS.getManager;
+  protected val legalSymbols = Seq[Char]('.', '/', '-', '_');
 
   def allowedUserPath(path: String): Boolean = {
     if (path.size == 0) return false;
-    return path.forall { c => Character.isLetterOrDigit(c) || c == '.' || c == '/' } && path.head.isLetterOrDigit && path.last.isLetterOrDigit;
+    return path.forall { c => Character.isLetterOrDigit(c) || legalSymbols.contains(c) } && path.head.isLetterOrDigit && path.last.isLetterOrDigit;
   }
 
   protected def resolveFileObject(path: String): FileObject = {
-    if (!allowedUserPath(path)) throw new IllegalArgumentException("Only alphanumerical and . is allowed for filepaths, it most also start and end with a alphanumerical character.");
+    if (!allowedUserPath(path)) throw new IllegalArgumentException("Invalid filename. Received-" + path);
     return fsMan.resolveFile(directory + "/" + path)
   }
 

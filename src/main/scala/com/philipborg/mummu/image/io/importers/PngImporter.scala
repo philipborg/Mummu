@@ -8,7 +8,6 @@ import com.philipborg.mummu.image.Pixel
 
 import ar.com.hjg.pngj.ImageLineInt
 import ar.com.hjg.pngj.PngReader
-import com.google.common.math.IntMath
 
 object PngImporter extends ImageImporter {
   def apply(inputStream: InputStream, imageSpawner: (ImageSpecification) => Image): Image = {

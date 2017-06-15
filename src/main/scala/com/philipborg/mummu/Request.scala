@@ -15,7 +15,7 @@ import com.philipborg.mummu.util.progress.ProgressAPI
 
 import delight.nashornsandbox.NashornSandboxes
 
-class Request(code: String, pathResolver: PathResolver, maxTime: Option[Int] = None, jsexecutor: Option[ExecutorService] = None, writer: Option[Writer] = None) extends Callable[Option[Throwable]] {
+class Request(code: String, pathResolver: PathResolver, maxTime: Option[Long] = None, jsexecutor: Option[ExecutorService] = None, writer: Option[Writer] = None) extends Callable[Option[Throwable]] {
 
   def call: Option[Throwable] = {
     try {
