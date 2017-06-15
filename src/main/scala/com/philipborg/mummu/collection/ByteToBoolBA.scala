@@ -22,4 +22,6 @@ class ByteToBoolBA(val size: Long, byteArray: (Long) => BigArray[Byte]) extends 
       (byte & (~(1 << (index % 8)))).toByte;
     underlying(uIndex) = changedByte;
   }
+  override def fill(eval: Long => Boolean): Unit = (0l until size).foreach(i => update(i, eval(i)));
+  override def fill(eval: => Boolean): Unit = (0l until size).foreach(i => update(i, eval));
 }
