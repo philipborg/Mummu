@@ -22,7 +22,7 @@ class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale
 
   def getPixel(x: Int, y: Int): Pixel = {
     if (!allowed(x, y)) throw new IllegalArgumentException("(" + x + "," + y + ") is out of image bounds.");
-    val readLock = lock.readLock();
+    lock.readLock.lock;
     try {
       val pixData = Queue((0 until bpp).map(i => if (data(flat(x, y, i))) '1' else '0'): _*);
       val grayPC: Option[Int] = if (grayscale) {
@@ -64,13 +64,13 @@ class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale
         return new Pixel(bpc = bpc, red = redPC.get, green = greenPC.get, blue = bluePC.get);
       }
     } finally {
-    	readLock.unlock();
+      lock.readLock.unlock;
     }
   }
 
   def setPixel(x: Int, y: Int, pixel: Pixel): Unit = {
     if (!allowed(x, y)) throw new IllegalArgumentException("(" + x + "," + y + ") is out of image bounds.");
-    val writeLock = lock.writeLock();
+    lock.writeLock.lock;
     try {
       val newPixel = ArrayBuffer.empty[Boolean];
 
@@ -92,7 +92,7 @@ class GenericImage(val width: Int, val height: Int, val bpc: Byte, val grayscale
         data(flat(x, y, b._2)) = b._1;
       }
     } finally {
-      writeLock.unlock();
+      lock.writeLock.unlock;
     }
   }
 
