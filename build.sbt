@@ -33,7 +33,7 @@ libraryDependencies += "commons-io" % "commons-io" % "2.5"
 libraryDependencies += "org.javadelight" % "delight-nashorn-sandbox" % "0.0.12"
 
 //ScalaFX (JavaFX)
-libraryDependencies += "org.scalafx" % "scalafx_2.11" % "8.0.102-R11"
+libraryDependencies += "org.scalafx" % "scalafx_2.12" % "8.0.102-R11"
 
 //FindBugs JSR305 Dependency for dependency
 libraryDependencies += "com.google.code.findbugs" % "jsr305" % "3.0.2"

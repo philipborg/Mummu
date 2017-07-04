@@ -21,9 +21,9 @@ object PngExporter extends ImageExporter {
     pngWriter.getMetadata.setText(PngChunkTextVar.KEY_Software, "Mummu by philipborg");
     pngWriter.getMetadata.setText("SoftwareLink", "https://github.com/philipborg/Mummu");
     try {
-      for (y <- 0 until image.height) {
+      for (y <- 0 until imgInfo.rows) {
         val imgLineInt = new ImageLineInt(imgInfo);
-        (0 until image.width par).foreach { x =>
+        (0 until imgInfo.cols par).foreach { x =>
           val pixel = image.getPixel(x, y);
           if (imgInfo.greyscale && imgInfo.alpha) {
             //Grayscale and alpha
@@ -50,6 +50,8 @@ object PngExporter extends ImageExporter {
         }
         pngWriter.writeRow(imgLineInt);
       }
+    } catch {
+      case e: Exception => e.printStackTrace();
     } finally {
       pngWriter.end;
     }

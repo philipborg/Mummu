@@ -23,6 +23,7 @@ import scalafx.scene.layout.BorderPane
 import scalafx.scene.paint.Color.Black
 import scalafx.stage.DirectoryChooser
 import scalafx.stage.FileChooser
+import java.util.concurrent.Executors
 
 /**
  * This should really be called Shitty GUI. As poorly designed as programmed, writing it was however very fast.
@@ -47,7 +48,7 @@ class SimpleGUI extends JFXApp {
       else println("No file selected.");
     }
   }
-
+  
   def execute = {
     val writer = new OutputStreamWriter(System.out, StandardCharsets.UTF_8);
     val req = new Request(code = code.value, pathResolver = new FileResolver(workingDirectory.value), writer = Some(writer));
