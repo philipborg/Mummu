@@ -1,3 +1,5 @@
+# *Discontinued*
+
 # Mummu
 A script driven system for generating and manipulating very big images. It is perfect for generating images of extreme sizes not possible in conventional photo editing software such as Adobe Photoshop and GIMP. Write the generation code using ECMA Script (Javascript) and let it generate with a comparatively very small memory footprint. Also usable as a normal Java library.
 
